@@ -27,7 +27,7 @@ terraform {
 
 locals {
   s3_bucket_name = "maho_static_site"
-  domain         = "maho.	sportport.net"
+  domain         = "sportport.net"
 }
 
 module "spa_infra" {
