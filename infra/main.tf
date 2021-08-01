@@ -28,6 +28,7 @@ terraform {
 locals {
   s3_bucket_name = "maho-static-site"
   domain         = "sportport.net"
+  routing_domain = "maho.sportport.net"
 }
 
 module "spa_infra" {
@@ -38,5 +39,6 @@ module "spa_infra" {
   source = "./module/spa_infra"
 
   domain         = local.domain
+  routing_domain = local.routing_domain
   s3_bucket_name = local.s3_bucket_name
 }
