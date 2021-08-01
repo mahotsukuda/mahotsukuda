@@ -14,8 +14,8 @@ provider "aws" {
 }
 
 terraform {
-  required_version = "~> 1.0.0"
-  /*
+  required_version = "~> 0.14.8"
+/*
     backend "s3" {
         backet =
         region =
