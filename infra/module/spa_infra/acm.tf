@@ -1,6 +1,6 @@
 resource "aws_acm_certificate" "acm_01" {
-  domain_name = var.domain
-  validation_method  = "DNS"
+  domain_name       = var.domain
+  validation_method = "DNS"
 }
 
 resource "aws_acm_certificate_validation" "acm_01_validation" {

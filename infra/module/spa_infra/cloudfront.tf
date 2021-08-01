@@ -6,7 +6,7 @@ resource "aws_cloudfront_distribution" "cloud_front_01" {
   aliases             = [var.domain]
   default_root_object = "index.html"
   enabled             = true
-  is_ipv6_enable      = true
+  is_ipv6_enabled     = true
   wait_for_deployment = true
 
   default_cache_behavior {
@@ -47,7 +47,7 @@ resource "aws_cloudfront_distribution" "cloud_front_01" {
 
   viewer_certificate {
     acm_certificate_arn      = aws_acm_certificate.acm_01.arn
-    minimun_protocol_version = "TLSv1.2_2018"
+    minimum_protocol_version = "TLSv1.2_2018"
     ssl_support_method       = "sni-only"
   }
 }
