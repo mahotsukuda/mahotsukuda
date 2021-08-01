@@ -1,9 +1,9 @@
 resource "aws_cloudfront_origin_access_identity" "cloud_front_01" {
-  comment = var.s3_bucket_name
+  comment = local.s3_bucket_name
 }
 
 resource "aws_cloudfront_distribution" "cloud_front_01" {
-  aliases             = [var.routing_domain]
+  aliases             = [local.routing_domain]
   default_root_object = "index.html"
   enabled             = true
   is_ipv6_enabled     = true
@@ -13,7 +13,7 @@ resource "aws_cloudfront_distribution" "cloud_front_01" {
     allowed_methods        = ["GET", "HEAD"]
     cached_methods         = ["GET", "HEAD"]
     compress               = true
-    target_origin_id       = var.s3_bucket_name
+    target_origin_id       = local.s3_bucket_name
     viewer_protocol_policy = "redirect-to-https"
 
     forwarded_values {
@@ -26,7 +26,7 @@ resource "aws_cloudfront_distribution" "cloud_front_01" {
 
   origin {
     domain_name = aws_s3_bucket.static_host.bucket_regional_domain_name
-    origin_id   = var.s3_bucket_name
+    origin_id   = local.s3_bucket_name
 
     s3_origin_config {
       origin_access_identity = aws_cloudfront_origin_access_identity.cloud_front_01.cloudfront_access_identity_path

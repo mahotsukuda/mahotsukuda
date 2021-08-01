@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "static_host" {
-  bucket = var.s3_bucket_name
+  bucket = local.s3_bucket_name
 
   versioning {
     enabled = false
