@@ -26,7 +26,7 @@ terraform {
 }
 
 locals {
-  s3_bucket_name = "maho_static_site"
+  s3_bucket_name = "maho-static-site"
   domain         = "sportport.net"
 }
 

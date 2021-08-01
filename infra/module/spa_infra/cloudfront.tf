@@ -3,7 +3,7 @@ resource "aws_cloudfront_origin_access_identity" "cloud_front_01" {
 }
 
 resource "aws_cloudfront_distribution" "cloud_front_01" {
-  aliases             = [var.domain]
+  aliases             = [var.routing_domain]
   default_root_object = "index.html"
   enabled             = true
   is_ipv6_enabled     = true

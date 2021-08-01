@@ -5,3 +5,7 @@ variable "s3_bucket_name" {
 variable "domain" {
   type = string
 }
+
+variable "routing_domain" {
+  type = string
+}

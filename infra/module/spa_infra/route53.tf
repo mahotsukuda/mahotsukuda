@@ -3,7 +3,7 @@ data "aws_route53_zone" "origin_domain" {
 }
 
 resource "aws_route53_record" "domain_01" {
-  name    = var.domain
+  name    = var.routing_domain
   type    = "A"
   zone_id = data.aws_route53_zone.origin_domain.zone_id
 
